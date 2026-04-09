@@ -1,0 +1,566 @@
+/* style.css - 𝐉𝐎𝐇𝐀𝐍 | 𝐘𝐔𝐆𝐈 𝐁𝐎𝐓 - Blue RGB Theme - أكثر من 500 سطر */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', 'Cairo', monospace;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    letter-spacing: 1px;
+}
+
+/* ========== طبقات الخلفية ========== */
+.hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -5;
+    filter: blur(8px) brightness(0.4);
+    transform: scale(1.05);
+}
+
+.overlay-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: -4;
+}
+
+.gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 50, 150, 0.3), transparent 70%);
+    z-index: -3;
+    pointer-events: none;
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMTUiLz48L3N2Zz4=');
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.color-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 150, 255, 0.1), transparent);
+    pointer-events: none;
+    z-index: -1;
+    animation: colorPulse 4s ease-in-out infinite;
+}
+
+@keyframes colorPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+/* ========== تأثير المصفوفة ========== */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ========== الحاوية الرئيسية ========== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ========== الهيدر ========== */
+.cyber-header {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 100, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 150, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    border-color: #00aaff;
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.4);
+}
+
+.stat-item i { color: #00aaff; font-size: 1.2rem; }
+.stat-item span { color: #fff; font-size: 0.85rem; }
+
+/* ========== البطاقة الشخصية ========== */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.profile-card {
+    text-align: center;
+    padding: 45px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card {
+    background: rgba(10, 20, 50, 0.35);
+    backdrop-filter: blur(15px);
+    border-radius: 50px;
+    border: 1px solid rgba(0, 150, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.glass-card:hover {
+    border-color: #00aaff;
+    box-shadow: 0 0 35px rgba(0, 150, 255, 0.3);
+}
+
+.profile-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 150, 255, 0.1), transparent);
+    pointer-events: none;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+}
+
+.profile-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #00aaff;
+    border-right-color: #0066ff;
+    animation: ringSpin 2s linear infinite;
+}
+
+.profile-ring-second {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-bottom-color: #00ff88;
+    border-left-color: #00aaff;
+    animation: ringSpinReverse 3s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes ringSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes ringSpinReverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00aaff;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+}
+
+.profile-status {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    background: #00ff88;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.profile-name {
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #fff, #00aaff, #0066ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.profile-title {
+    color: #aaa;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.profile-bio {
+    color: #00aaff;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 150, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+    font-style: italic;
+}
+
+.profile-badges {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(0, 150, 255, 0.2);
+    padding: 6px 15px;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(0, 150, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.badge:hover {
+    background: rgba(0, 150, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.whatsapp-btn { background: linear-gradient(135deg, #25D366, #128C7E); color: white; }
+.copy-btn { background: linear-gradient(135deg, #00aaff, #0066cc); color: white; }
+.telegram-btn { background: linear-gradient(135deg, #0088cc, #006699); color: white; }
+.contact-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+/* ========== الإحصائيات ========== */
+.stats-section { margin-bottom: 60px; }
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+.stat-card {
+    text-align: center;
+    padding: 25px;
+    transition: all 0.3s;
+}
+.stat-card:hover {
+    transform: translateY(-8px);
+}
+.stat-icon i { font-size: 2.5rem; color: #00aaff; margin-bottom: 15px; }
+.stat-number { font-size: 2.8rem; font-weight: bold; color: #00aaff; font-family: monospace; }
+.stat-label { color: #aaa; margin-top: 5px; font-size: 0.85rem; }
+.stat-desc { color: #666; font-size: 0.7rem; margin-top: 8px; }
+
+/* ========== المهارات ========== */
+.skills-section { margin-bottom: 60px; }
+.section-header { text-align: center; margin-bottom: 40px; }
+.section-title { font-size: 2.2rem; color: #00aaff; text-shadow: 0 0 15px rgba(0, 150, 255, 0.5); display: inline-block; }
+.title-line { width: 120px; height: 3px; background: linear-gradient(90deg, transparent, #00aaff, #0066ff, transparent); margin: 15px auto; }
+.section-desc { color: #aaa; font-size: 0.85rem; margin-top: 10px; }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.skill-card {
+    background: rgba(10, 20, 50, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(0, 150, 255, 0.3);
+    transition: all 0.3s;
+}
+.skill-card:hover { transform: translateY(-8px); border-color: #00aaff; }
+.skill-icon i { font-size: 3.5rem; color: #00aaff; margin-bottom: 15px; }
+.skill-card h3 { margin-bottom: 15px; color: #fff; font-size: 1.3rem; }
+.skill-bar { height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; margin: 15px 0; }
+.skill-progress { height: 100%; background: linear-gradient(90deg, #00aaff, #0066ff); border-radius: 10px; width: 0; transition: width 1s ease; }
+.skill-card span { color: #00aaff; font-weight: bold; }
+.skill-desc { color: #888; font-size: 0.75rem; margin-top: 10px; }
+
+/* ========== المشاريع ========== */
+.projects-section { margin-bottom: 60px; }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+.project-card {
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.project-card:hover { transform: translateY(-8px); }
+.project-icon i { font-size: 2.5rem; color: #00aaff; margin-bottom: 15px; }
+.project-card h3 { margin-bottom: 12px; color: #fff; }
+.project-card p { color: #aaa; font-size: 0.85rem; margin-bottom: 15px; line-height: 1.6; }
+.project-tags { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.project-tags span { background: rgba(0, 150, 255, 0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; border: 1px solid rgba(0, 150, 255, 0.3); }
+
+/* ========== الجروبات والقنوات ========== */
+.links-section { margin-bottom: 60px; }
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.link-card {
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.link-card:hover { transform: translateY(-8px); }
+.link-card i { font-size: 3rem; color: #00aaff; margin-bottom: 15px; }
+.link-name { font-size: 1.3rem; font-weight: bold; color: #fff; margin-bottom: 8px; }
+.link-sub { color: #aaa; font-size: 0.85rem; margin-bottom: 10px; }
+.link-stats { color: #00aaff; font-size: 0.8rem; margin-bottom: 15px; }
+.link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 150, 255, 0.2);
+    border: 1px solid #00aaff;
+    padding: 10px 25px;
+    border-radius: 40px;
+    color: #00aaff;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.link-btn:hover { background: #00aaff; color: #000; box-shadow: 0 0 15px #00aaff; }
+
+/* ========== آراء العملاء ========== */
+.testimonials-section { margin-bottom: 60px; }
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.testimonial-card { padding: 25px; }
+.testimonial-text { display: flex; gap: 12px; margin-bottom: 20px; }
+.testimonial-text i { color: #00aaff; font-size: 1.5rem; opacity: 0.7; }
+.testimonial-text p { color: #ddd; line-height: 1.7; font-size: 0.9rem; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; padding-top: 15px; border-top: 1px solid rgba(0, 150, 255, 0.2); flex-wrap: wrap; }
+.testimonial-author i { font-size: 1.5rem; color: #00aaff; }
+.testimonial-author span { color: #fff; font-size: 0.85rem; }
+.rating { display: flex; gap: 3px; margin-left: auto; }
+.rating i { color: #FFD700; font-size: 0.8rem; }
+
+/* ========== الأسئلة الشائعة ========== */
+.faq-section { margin-bottom: 60px; }
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+.faq-card { padding: 20px; cursor: pointer; }
+.faq-question {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: #00aaff;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 150, 255, 0.3);
+}
+.faq-answer { color: #aaa; font-size: 0.85rem; line-height: 1.6; padding-right: 25px; }
+
+/* ========== قسم التواصل ========== */
+.contact-section { margin-bottom: 60px; }
+.contact-card {
+    text-align: center;
+    padding: 45px;
+    position: relative;
+    overflow: hidden;
+}
+.contact-card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 150, 255, 0.1), transparent);
+    animation: contactGlow 4s ease-in-out infinite;
+}
+@keyframes contactGlow {
+    0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+    50% { transform: translate(10%, 10%); opacity: 0.6; }
+}
+.contact-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: #00aaff; }
+.contact-card p { margin-bottom: 20px; color: #aaa; }
+.contact-quick { display: flex; justify-content: center; gap: 30px; margin-bottom: 25px; flex-wrap: wrap; }
+.quick-info { display: flex; align-items: center; gap: 8px; background: rgba(0, 150, 255, 0.1); padding: 8px 18px; border-radius: 40px; font-size: 0.85rem; }
+.quick-info i { color: #00aaff; }
+.contact-big-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    padding: 16px 40px;
+    border-radius: 60px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+.contact-big-btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+/* ========== الفوتر ========== */
+.cyber-footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid rgba(0, 150, 255, 0.3);
+    margin-top: 20px;
+}
+.footer-logo { font-size: 1.3rem; color: #00aaff; margin-bottom: 20px; letter-spacing: 2px; }
+.footer-social { margin-bottom: 20px; }
+.social-link {
+    display: inline-block;
+    color: #00aaff;
+    font-size: 1.5rem;
+    margin: 0 12px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.social-link:hover { color: #fff; text-shadow: 0 0 10px #00aaff; transform: translateY(-3px); }
+.footer-copy { color: #666; font-size: 0.8rem; margin-top: 8px; }
+
+/* ========== توست ========== */
+.toast-msg {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 150, 255, 0.95);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    z-index: 10000;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid #00aaff;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* ========== استجابة ========== */
+@media (max-width: 968px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .profile-name { font-size: 1.6rem; }
+    .section-title { font-size: 1.6rem; }
+    .profile-image-wrapper { width: 150px; height: 150px; }
+    .profile-ring { width: 160px; height: 160px; }
+    .profile-ring-second { width: 170px; height: 170px; }
+}
+
+@media (max-width: 576px) {
+    .container { padding: 10px; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .header-stats { gap: 10px; }
+    .stat-item { padding: 6px 12px; font-size: 0.7rem; }
+    .profile-card { padding: 25px; }
+    .profile-name { font-size: 1.3rem; }
+    .contact-big-btn { padding: 12px 25px; font-size: 0.9rem; }
+    .toast-msg { white-space: normal; text-align: center; max-width: 90%; }
+    .quick-info { font-size: 0.7rem; }
+}
