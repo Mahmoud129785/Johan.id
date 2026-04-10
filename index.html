@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>𝐉𝐎𝐇𝐀𝐍 | 𝐘𝐔𝐆𝐈 𝐁𝐎𝐓 - مبرمج واتساب</title>
+    <title>𝐉𝐎𝐇𝐀𝐍 | 𝐘𝐔𝐆𝐈 𝐁𝐎𝐓 - مطور واتساب</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <!-- طبقات الخلفية -->
+    <!-- طبقات الخلفية المتطورة -->
     <div class="hero-bg" style="background-image: url('https://files.catbox.moe/0doyth.jpg');"></div>
     <div class="overlay-dark"></div>
     <div class="gradient-overlay"></div>
     <canvas id="matrixCanvas"></canvas>
     <canvas id="particleCanvas"></canvas>
+    <canvas id="waveCanvas"></canvas>
     <div class="color-overlay"></div>
     <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+    <div class="scanlines"></div>
 
     <!-- أصوات تفاعلية -->
     <audio id="clickSound" src="https://www.myinstants.com/media/sounds/button-click.mp3" preload="auto"></audio>
@@ -25,7 +28,7 @@
 
     <div class="container">
         
-        <!-- الهيدر -->
+        <!-- ========== الهيدر ========== -->
         <header class="cyber-header">
             <div class="header-stats">
                 <div class="stat-item click-sound"><i class="fas fa-code"></i><span>مبرمج واتساب</span></div>
@@ -36,26 +39,27 @@
             </div>
         </header>
 
-        <!-- البطاقة الشخصية (علامة التوثيق جنب الاسم) -->
+        <!-- ========== البطاقة الشخصية ========== -->
         <section class="profile-section">
             <div class="profile-card glass-card">
                 <div class="profile-glow"></div>
                 <div class="profile-image-wrapper">
                     <div class="profile-ring"></div>
                     <div class="profile-ring-second"></div>
+                    <div class="profile-ring-third"></div>
                     <img src="https://files.catbox.moe/av72pp.jpg" alt="𝐉𝐎𝐇𝐀𝐍" class="profile-image">
                 </div>
                 <div class="profile-name-wrapper">
                     <h1 class="profile-name">𝐉𝐎𝐇𝐀𝐍</h1>
                     <i class="fas fa-check-circle verified-badge"></i>
                 </div>
-                <p class="profile-title">⚡ مبرمج واتساب | مطور بوتات ⚡</p>
-                <p class="profile-bio">"كوباية قهوة، شوية مزيكا، وجهاز جاهز للبرمجة - كل اللي محتاجه."</p>
+                <p class="profile-title">⚡ مطور واتساب | صانع بوتات ⚡</p>
+                <p class="profile-bio">"كوباية قهوة، شوية مزيكا، وجهاز جاهز - كل اللي محتاجه عشان أبدع"</p>
                 <div class="profile-badges">
                     <span class="badge click-sound"><i class="fas fa-check-circle"></i> متفرغ</span>
                     <span class="badge click-sound"><i class="fas fa-terminal"></i> مبرمج</span>
                     <span class="badge click-sound"><i class="fas fa-rocket"></i> سريع</span>
-                    <span class="badge click-sound"><i class="fas fa-crown"></i> احترافي</span>
+                    <span class="badge click-sound"><i class="fas fa-crown"></i> محترف</span>
                 </div>
                 <div class="contact-buttons">
                     <a href="https://wa.me/972599351264" class="contact-btn whatsapp-btn click-sound"><i class="fab fa-whatsapp"></i> واتساب</a>
@@ -64,100 +68,159 @@
             </div>
         </section>
 
-        <!-- إحصائيات واقعية -->
+        <!-- ========== إحصائيات سريعة ========== -->
+        <section class="quick-stats">
+            <div class="quick-stats-grid">
+                <div class="quick-stat"><i class="fas fa-smile"></i><span>99%</span><small>رضا العملاء</small></div>
+                <div class="quick-stat"><i class="fas fa-clock"></i><span>24/7</span><small>دعم فني</small></div>
+                <div class="quick-stat"><i class="fas fa-tachometer-alt"></i><span>0.5s</span><small>سرعة الاستجابة</small></div>
+                <div class="quick-stat"><i class="fas fa-globe"></i><span>10+</span><small>دولة</small></div>
+            </div>
+        </section>
+
+        <!-- ========== إحصائيات رئيسية ========== -->
         <section class="stats-section">
             <div class="stats-grid">
-                <div class="stat-card glass-card">
-                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
-                    <div class="stat-number" id="yearsExp">0</div>
-                    <div class="stat-label">سنين خبرة</div>
-                </div>
-                <div class="stat-card glass-card">
-                    <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
-                    <div class="stat-number" id="projectsCount">0</div>
-                    <div class="stat-label">مشروع</div>
-                </div>
-                <div class="stat-card glass-card">
-                    <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <div class="stat-number" id="clientsCount">0</div>
-                    <div class="stat-label">عميل</div>
-                </div>
-                <div class="stat-card glass-card">
-                    <div class="stat-icon"><i class="fas fa-robot"></i></div>
-                    <div class="stat-number" id="botsCount">0</div>
-                    <div class="stat-label">بوت</div>
-                </div>
+                <div class="stat-card glass-card"><div class="stat-icon"><i class="fas fa-calendar-alt"></i></div><div class="stat-number" id="yearsExp">0</div><div class="stat-label">سنين خبرة</div><div class="stat-desc">من 2024 لحد دلوقتي</div></div>
+                <div class="stat-card glass-card"><div class="stat-icon"><i class="fas fa-code-branch"></i></div><div class="stat-number" id="projectsCount">0</div><div class="stat-label">مشروع كامل</div><div class="stat-desc">بوتات ومواقع وتطبيقات</div></div>
+                <div class="stat-card glass-card"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number" id="clientsCount">0</div><div class="stat-label">عميل راضي</div><div class="stat-desc">من كل الدول العربية</div></div>
+                <div class="stat-card glass-card"><div class="stat-icon"><i class="fas fa-robot"></i></div><div class="stat-number" id="botsCount">0</div><div class="stat-label">بوت مطور</div><div class="stat-desc">لواتساب وتليجرام</div></div>
+                <div class="stat-card glass-card"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-number" id="channelMembers">0</div><div class="stat-label">مشترك في القناة</div><div class="stat-desc">بيتحدث تلقائي</div></div>
+                <div class="stat-card glass-card"><div class="stat-icon"><i class="fas fa-code"></i></div><div class="stat-number" id="linesCount">0</div><div class="stat-label">سطر كود</div><div class="stat-desc">في كل المشاريع</div></div>
             </div>
         </section>
 
-        <!-- المهارات -->
+        <!-- ========== المهارات التقنية ========== -->
         <section class="skills-section">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fas fa-code"></i> اللغات اللي ببرع فيها</h2>
-                <div class="title-line"></div>
-            </div>
+            <div class="section-header"><h2 class="section-title"><i class="fas fa-code"></i> اللغات اللي ببرع فيها</h2><div class="title-line"></div><p class="section-desc">اللغات اللي بشتغل عليها يومياً وبنيت بيهم مشاريع كتير</p></div>
             <div class="skills-grid">
-                <div class="skill-card"><div class="skill-icon"><i class="fab fa-js"></i></div><h3>JavaScript</h3><div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div><span>90%</span></div>
-                <div class="skill-card"><div class="skill-icon"><i class="fab fa-node-js"></i></div><h3>Node.js</h3><div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div><span>85%</span></div>
-                <div class="skill-card"><div class="skill-icon"><i class="fab fa-html5"></i></div><h3>HTML</h3><div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div><span>88%</span></div>
-                <div class="skill-card"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div><h3>CSS</h3><div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div><span>85%</span></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fab fa-js"></i></div><h3>JavaScript</h3><div class="skill-bar"><div class="skill-progress" data-progress="92"></div></div><span>92%</span><div class="skill-desc">أساس كل حاجة</div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fab fa-node-js"></i></div><h3>Node.js</h3><div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div><span>88%</span><div class="skill-desc">سيرفرات وبوتات</div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fab fa-html5"></i></div><h3>HTML5</h3><div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div><span>90%</span><div class="skill-desc">هياكل مواقع</div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div><h3>CSS3</h3><div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div><span>85%</span><div class="skill-desc">تصميمات متحركة</div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fab fa-python"></i></div><h3>Python</h3><div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div><span>75%</span><div class="skill-desc">سكريبتات</div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-database"></i></div><h3>MongoDB</h3><div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div><span>80%</span><div class="skill-desc">قواعد بيانات</div></div>
             </div>
         </section>
 
-        <!-- الجروبات والقنوات -->
+        <!-- ========== خدماتي ========== -->
+        <section class="services-section">
+            <div class="section-header"><h2 class="section-title"><i class="fas fa-cogs"></i> الخدمات اللي بقدمها</h2><div class="title-line"></div></div>
+            <div class="services-grid">
+                <div class="service-card glass-card click-sound"><i class="fas fa-robot"></i><h3>تطوير بوتات واتساب</h3><p>بوتات متكاملة فيها حماية، رفع، أنظمة أمان، أوامر ترفيهية وإدارية</p><div class="service-tag">من 300 أمر لفوق</div></div>
+                <div class="service-card glass-card click-sound"><i class="fas fa-shield-alt"></i><h3>أنظمة حماية</h3><p>حماية متقدمة للمجموعات ضد السبام والروابط الضارة والاختراقات</p><div class="service-tag">حماية 24/7</div></div>
+                <div class="service-card glass-card click-sound"><i class="fas fa-download"></i><h3>أنظمة تحميل</h3><p>بوتات تحميل فيديوهات وموسيقى من يوتيوب وانستجرام وتيك توك</p><div class="service-tag">تحميل سريع</div></div>
+                <div class="service-card glass-card click-sound"><i class="fas fa-chart-line"></i><h3>أنظمة إحصائيات</h3><p>تحليل بيانات المجموعات والأعضاء في الوقت الفعلي</p><div class="service-tag">تقارير دقيقة</div></div>
+                <div class="service-card glass-card click-sound"><i class="fas fa-gamepad"></i><h3>ألعاب تفاعلية</h3><p>ألعاب جوه البوت للترفيه وزيادة التفاعل في المجموعات</p><div class="service-tag">ألعاب متنوعة</div></div>
+                <div class="service-card glass-card click-sound"><i class="fas fa-code"></i><h3>تطوير مواقع</h3><p>مواقع شخصية ولوحات تحكم ومتاجر إلكترونية بتصميمات عصرية</p><div class="service-tag">تصميم متجاوب</div></div>
+            </div>
+        </section>
+
+        <!-- ========== المشاريع اللي عملتها ========== -->
+        <section class="projects-section">
+            <div class="section-header"><h2 class="section-title"><i class="fas fa-folder-open"></i> أبرز المشاريع</h2><div class="title-line"></div><p class="section-desc">شوف بعض الحاجات اللي سويتها بنفسي</p></div>
+            <div class="projects-grid">
+                <div class="project-card glass-card click-sound"><div class="project-icon"><i class="fas fa-robot"></i></div><h3>𝐘𝐔𝐆𝐈 𝐁𝐎𝐓</h3><p>بوت واتساب متكامل فيه أكتر من 300 أمر، حماية، أنظمة رفع، أوامر ترفيهية وإدارية</p><div class="project-tags"><span>WhatsApp</span><span>Bot</span><span>Security</span></div></div>
+                <div class="project-card glass-card click-sound"><div class="project-icon"><i class="fas fa-shield-alt"></i></div><h3>نظام الحماية المتقدم</h3><p>نظام حماية متقدم للمجموعات ضد السبام والروابط الضارة والاختراقات</p><div class="project-tags"><span>Security</span><span>Anti-Spam</span></div></div>
+                <div class="project-card glass-card click-sound"><div class="project-icon"><i class="fas fa-download"></i></div><h3>نظام التحميل التلقائي</h3><p>بوت تحميل فيديوهات وموسيقى من يوتيوب وانستجرام وتيك توك بضغطة واحدة</p><div class="project-tags"><span>Downloader</span><span>Media</span></div></div>
+                <div class="project-card glass-card click-sound"><div class="project-icon"><i class="fas fa-chart-line"></i></div><h3>نظام الإحصائيات الذكي</h3><p>نظام بيحلل بيانات المجموعات والأعضاء في الوقت الفعلي ويعرض إحصائيات دقيقة</p><div class="project-tags"><span>Analytics</span><span>Statistics</span></div></div>
+                <div class="project-card glass-card click-sound"><div class="project-icon"><i class="fas fa-gamepad"></i></div><h3>ألعاب البوت التفاعلية</h3><p>مجموعة ألعاب جوه البوت: تخمين، أرقام، أسئلة، وألعاب جماعية للترفيه</p><div class="project-tags"><span>Games</span><span>Interactive</span></div></div>
+                <div class="project-card glass-card click-sound"><div class="project-icon"><i class="fas fa-users"></i></div><h3>نظام الرفع المتكامل</h3><p>أنظمة رفع للمشرفين، مالكين المجموعات، مع صلاحيات متعددة وإمكانية التحكم الكامل</p><div class="project-tags"><span>Admin</span><span>Promotion</span></div></div>
+            </div>
+        </section>
+
+        <!-- ========== الاسكربتات للبيع ========== -->
+        <section class="scripts-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-cogs"></i> اسكربتات بوتات للبيع</h2>
+                <div class="title-line"></div>
+                <p class="section-desc">*• 5 اسـكـربـتـات بـوتـات مخـتـلـفة لـلبـيـع •*</p>
+            </div>
+            <div class="scripts-grid">
+                <!-- اسكربت 1 - مادارا -->
+                <div class="script-card glass-card click-script" data-script-url="https://wa.me/972599351264?text=أنا عايز أشتري اسكربت مادارا بوت 550 أمر">
+                    <div class="script-image-wrapper"><img src="https://files.catbox.moe/ig13ij.jpg" alt="مادارا بوت" class="script-image"><div class="script-overlay"><i class="fas fa-shopping-cart"></i> اضغط للشراء</div></div>
+                    <div class="script-info"><h3 class="script-name">⚡ مادارا بوت</h3><div class="script-details"><span class="script-badge"><i class="fas fa-terminal"></i> 550 أمر</span><span class="script-badge"><i class="fas fa-shield-alt"></i> حماية كاملة</span></div><p class="script-desc">بوت متكامل فيه 550 أمر، أنظمة حماية، رفع، أمان، وأوامر ترفيهية وإدارية</p><div class="script-price"><span class="price">💰 للسوم</span><button class="buy-btn click-sound">اطلب الاسكربت <i class="fas fa-arrow-left"></i></button></div></div>
+                </div>
+                <!-- اسكربت 2 - مجهول الاسم -->
+                <div class="script-card glass-card click-script" data-script-url="https://wa.me/972599351264?text=أنا عايز أشتري اسكربت مجهول الاسم 550 أمر">
+                    <div class="script-image-wrapper"><img src="https://files.catbox.moe/cnv7ux.jpg" alt="مجهول الاسم" class="script-image"><div class="script-overlay"><i class="fas fa-shopping-cart"></i> اضغط للشراء</div></div>
+                    <div class="script-info"><h3 class="script-name">🕶️ مجهول الاسم</h3><div class="script-details"><span class="script-badge"><i class="fas fa-terminal"></i> 550 أمر</span><span class="script-badge"><i class="fas fa-shield-alt"></i> حماية كاملة</span></div><p class="script-desc">بوت قوي ومجهول الهوية، فيه 550 أمر، مناسب للمجموعات الكبيرة</p><div class="script-price"><span class="price">💰 للسوم</span><button class="buy-btn click-sound">اطلب الاسكربت <i class="fas fa-arrow-left"></i></button></div></div>
+                </div>
+                <!-- اسكربت 3 - دارك -->
+                <div class="script-card glass-card click-script" data-script-url="https://wa.me/972599351264?text=أنا عايز أشتري اسكربت دارك 440 أمر">
+                    <div class="script-image-wrapper"><img src="https://files.catbox.moe/0nq4mo.jpg" alt="دارك بوت" class="script-image"><div class="script-overlay"><i class="fas fa-shopping-cart"></i> اضغط للشراء</div></div>
+                    <div class="script-info"><h3 class="script-name">🌑 دارك بوت</h3><div class="script-details"><span class="script-badge"><i class="fas fa-terminal"></i> 440 أمر</span><span class="script-badge"><i class="fas fa-shield-alt"></i> حماية كاملة</span></div><p class="script-desc">بوت داكن وقوي، فيه 440 أمر، أنظمة متطورة وحماية فائقة</p><div class="script-price"><span class="price">💰 للسوم</span><button class="buy-btn click-sound">اطلب الاسكربت <i class="fas fa-arrow-left"></i></button></div></div>
+                </div>
+                <!-- اسكربت 4 - فورينا -->
+                <div class="script-card glass-card click-script" data-script-url="https://wa.me/972599351264?text=أنا عايز أشتري اسكربت فورينا 270 أمر">
+                    <div class="script-image-wrapper"><img src="https://files.catbox.moe/4bre7w.jpg" alt="فورينا بوت" class="script-image"><div class="script-overlay"><i class="fas fa-shopping-cart"></i> اضغط للشراء</div></div>
+                    <div class="script-info"><h3 class="script-name">💎 فورينا بوت</h3><div class="script-details"><span class="script-badge"><i class="fas fa-terminal"></i> 270 أمر</span><span class="script-badge"><i class="fas fa-shield-alt"></i> حماية كاملة</span></div><p class="script-desc">بوت خفيف وسريع، فيه 270 أمر، مناسب للبدء في عالم البوتات</p><div class="script-price"><span class="price">💰 للسوم</span><button class="buy-btn click-sound">اطلب الاسكربت <i class="fas fa-arrow-left"></i></button></div></div>
+                </div>
+            </div>
+            <div class="scripts-note glass-card"><i class="fas fa-info-circle"></i><p>ملحوظة: كل الاسكربتات قابلة للتعديل، فيها حماية كاملة، وبتشتغل 24/7. للاستفسار عن السعر، اضغط على أي اسكربت واتواصل معايا مباشرة</p></div>
+        </section>
+
+        <!-- ========== آراء العملاء ========== -->
+        <section class="testimonials-section">
+            <div class="section-header"><h2 class="section-title"><i class="fas fa-star"></i> اللي قالوه عني</h2><div class="title-line"></div><p class="section-desc">آراء العملاء اللي اتعاملوا معايا</p></div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card"><div class="testimonial-text"><i class="fas fa-quote-right"></i><p>والله شغل نضيف ومنظم، البوت زي الفل، تعامل محترم وسريع. أنصح بيه جداً.</p></div><div class="testimonial-author"><i class="fas fa-user-circle"></i><span>أحمد - مصر</span><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
+                <div class="testimonial-card glass-card"><div class="testimonial-text"><i class="fas fa-quote-right"></i><p>أمان وشغل احترافي، البوت شغال 24 ساعة من غير مشاكل. أفضل مطور اتعاملت معاه.</p></div><div class="testimonial-author"><i class="fas fa-user-circle"></i><span>محمد - السعودية</span><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
+                <div class="testimonial-card glass-card"><div class="testimonial-text"><i class="fas fa-quote-right"></i><p>خدمة ممتازة ودعم فني رهيب، البوت فيه مميزات كتير مش موجودة في أي بوت تاني.</p></div><div class="testimonial-author"><i class="fas fa-user-circle"></i><span>سارة - الإمارات</span><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
+                <div class="testimonial-card glass-card"><div class="testimonial-text"><i class="fas fa-quote-right"></i><p>سرعة في التنفيذ ودقة في الشغل، أتمنى التعامل معاه تاني قريب.</p></div><div class="testimonial-author"><i class="fas fa-user-circle"></i><span>عبدالله - الكويت</span><div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
+            </div>
+        </section>
+
+        <!-- ========== الأسئلة الشائعة ========== -->
+        <section class="faq-section">
+            <div class="section-header"><h2 class="section-title"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</h2><div class="title-line"></div></div>
+            <div class="faq-grid">
+                <div class="faq-card glass-card"><div class="faq-question click-sound"><i class="fas fa-question"></i> إزاي أقدر أطلب بوت؟</div><div class="faq-answer">بتواصل معايا على واتساب ونتفق على التفاصيل، وبعد كدة باشتغل عليه وأسلمه لك في خلال أيام.</div></div>
+                <div class="faq-card glass-card"><div class="faq-question click-sound"><i class="fas fa-question"></i> البوت بيشتغل على إيه؟</div><div class="faq-answer">بيشتغل على Node.js وقاعدة بيانات MongoDB، وشغال 24 ساعة من غير أي مشاكل.</div></div>
+                <div class="faq-card glass-card"><div class="faq-question click-sound"><i class="fas fa-question"></i> فين بقدر أشترك في القناة؟</div><div class="faq-answer">فوق كدة في قسم "تواصل معانا" هتلاقي الروابط بتاعة الجروب والقناة.</div></div>
+                <div class="faq-card glass-card"><div class="faq-question click-sound"><i class="fas fa-question"></i> بتاخد وقت قد إيه في التطوير؟</div><div class="faq-answer">على حسب حجم البوت، بس غالباً من 3 أيام لأسبوع كحد أقصى.</div></div>
+                <div class="faq-card glass-card"><div class="faq-question click-sound"><i class="fas fa-question"></i> الاسكربتات اللي للبيع فيها ضمان؟</div><div class="faq-answer">أكيد، كل اسكربت فيه ضمان شامل ضد أي مشاكل تقنية.</div></div>
+                <div class="faq-card glass-card"><div class="faq-question click-sound"><i class="fas fa-question"></i> بتقبل أي طريقة دفع؟</div><div class="faq-answer">أي طريقة دفع تناسبك، واتساب أو فودافون كاش أو بايبال.</div></div>
+            </div>
+        </section>
+
+        <!-- ========== الجروبات والقنوات ========== -->
         <section class="links-section">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fab fa-whatsapp"></i> تواصل معانا</h2>
-                <div class="title-line"></div>
-            </div>
+            <div class="section-header"><h2 class="section-title"><i class="fab fa-whatsapp"></i> تواصل معانا</h2><div class="title-line"></div><p class="section-desc">انضم للجروبات والقناة عشان تفضل متابع كل جديد</p></div>
             <div class="links-grid">
-                <div class="link-card glass-card click-sound">
-                    <i class="fab fa-whatsapp"></i>
-                    <div class="link-name">SUP YUGI BOT</div>
-                    <div class="link-sub">جروب الدعم الأساسي</div>
-                    <a href="https://chat.whatsapp.com/HgGZinH8s2aCSxdEZBObmr" class="link-btn click-sound">انضم الآن <i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="link-card glass-card click-sound">
-                    <i class="fab fa-whatsapp"></i>
-                    <div class="link-name">SUP YUGI BOT</div>
-                    <div class="link-sub">جروب الدعم الاحتياطي</div>
-                    <a href="https://chat.whatsapp.com/DI1WglSmC2AD3kp1KhvVGE" class="link-btn click-sound">انضم الآن <i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="link-card glass-card click-sound">
-                    <i class="fab fa-whatsapp"></i>
-                    <div class="link-name">CHANNEL</div>
-                    <div class="link-sub">قناة البوت الرسمية</div>
-                    <a href="https://whatsapp.com/channel/0029Vb6S5R9DJ6H01zcTAh0j" class="link-btn click-sound">اشترك الآن <i class="fas fa-arrow-left"></i></a>
-                </div>
+                <div class="link-card glass-card click-sound"><i class="fab fa-whatsapp"></i><div class="link-name">『 𝐒𝐔𝐏˖࣪⃟ 𝐘𝐔𝐆𝐈 𝐁𝐎𝐓 』</div><div class="link-sub">جروب الدعم الأساسي</div><div class="link-stats"><i class="fas fa-users"></i> +5k عضو</div><a href="https://chat.whatsapp.com/HgGZinH8s2aCSxdEZBObmr" class="link-btn click-sound">انضم الآن <i class="fas fa-arrow-left"></i></a></div>
+                <div class="link-card glass-card click-sound"><i class="fab fa-whatsapp"></i><div class="link-name">『 𝐒𝐔𝐏˖࣪⃟ 𝐘𝐔𝐆𝐈 𝐁𝐎𝐓² 』</div><div class="link-sub">جروب الدعم الاحتياطي</div><div class="link-stats"><i class="fas fa-users"></i> +2k عضو</div><a href="https://chat.whatsapp.com/DI1WglSmC2AD3kp1KhvVGE" class="link-btn click-sound">انضم الآن <i class="fas fa-arrow-left"></i></a></div>
+                <div class="link-card glass-card click-sound"><i class="fab fa-whatsapp"></i><div class="link-name">『 𝐂𝐇𝐀𝐍𝐍𝐄𝐋˖࣪⃟ 𝐘𝐔𝐆𝐈 𝐁𝐎𝐓 』</div><div class="link-sub">قناة البوت الرسمية</div><div class="link-stats"><i class="fas fa-bell"></i> آخر التحديثات</div><a href="https://whatsapp.com/channel/0029Vb6S5R9DJ6H01zcTAh0j" class="link-btn click-sound" id="channelLink">اشترك الآن <i class="fas fa-arrow-left"></i></a></div>
             </div>
         </section>
 
-        <!-- قسم البوت -->
-        <section class="bot-section">
-            <div class="section-header">
-                <h2 class="section-title"><i class="fas fa-robot"></i> 𝐘𝐔𝐆𝐈 𝐁𝐎𝐓</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="bot-card glass-card">
-                <div class="bot-stats">
-                    <div class="bot-stat"><i class="fas fa-database"></i><span>أكتر من 1200 أمر</span></div>
-                    <div class="bot-stat"><i class="fas fa-users"></i><span>آلاف المستخدمين</span></div>
-                    <div class="bot-stat"><i class="fas fa-clock"></i><span>شغال 24 ساعة</span></div>
-                    <div class="bot-stat"><i class="fas fa-shield-hart"></i><span>حماية قوية</span></div>
-                </div>
-                <p class="bot-desc">𝐘𝐔𝐆𝐈 𝐁𝐎𝐓 هو بوت واتساب معمول بإيدي، فيه أكتر من 1200 أمر، حماية قوية، أنظمة رفع وأمان، وأوامر ترفيهية وإدارية كتير.</p>
+        <!-- ========== قسم التواصل السريع ========== -->
+        <section class="contact-section">
+            <div class="contact-card glass-card">
+                <div class="contact-card-glow"></div>
+                <h3><i class="fas fa-paper-plane"></i> عايز تكلمني؟</h3>
+                <p>لو عايز بوت أو اسكربت أو استفسار، ابعتلي على واتساب وهرد عليك في أسرع وقت</p>
+                <div class="contact-quick"><div class="quick-info"><i class="fab fa-whatsapp"></i> +972 59-935-1264</div><div class="quick-info"><i class="far fa-clock"></i> الرد خلال 5 دقائق</div></div>
+                <a href="https://wa.me/972599351264" class="contact-big-btn click-sound"><i class="fab fa-whatsapp"></i><span>كلمني على واتساب</span><i class="fas fa-arrow-left"></i></a>
             </div>
         </section>
 
-        <!-- الفوتر -->
+        <!-- ========== الفوتر ========== -->
         <footer class="cyber-footer">
             <div class="footer-content">
                 <div class="footer-logo">𝐉𝐎𝐇𝐀𝐍 ⚡ 𝐘𝐔𝐆𝐈 𝐁𝐎𝐓</div>
-                <p class="footer-copy">© 2025 𝐉𝐎𝐇𝐀𝐍 - كل الحتة دي شغلي</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/972599351264" class="social-link click-sound"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link click-sound" onclick="showToast('قريباً على تليجرام 🚀')"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link click-sound" onclick="showToast('قريباً على جيثوب 🚀')"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="footer-copy">© 2025 𝐉𝐎𝐇𝐀𝐍 - كل الحتة دي شغلي وبتاعتي</p>
+                <p class="footer-copy">مبرمج واتساب | بوتات احترافية | حماية فائقة</p>
             </div>
         </footer>
     </div>
 
     <script src="script.js"></script>
 </body>
-    </html>
+                    </html>
